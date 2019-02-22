@@ -2,9 +2,14 @@ version: '3'
 
 services:
     db:
-        image: sirasit1234/opencue-db:init
-        env_file:
-            - 'opencue.env'
+        image: postgres
+        environment:
+            DB_NAME: cuebot_local
+            DB_USER: cuebot
+            DB_PASS: postgres
+            POSTGRES_DB: cuebot_local
+            POSTGRES_USER: cuebot
+            POSTGRES_PASSWORD: postgres
         volumes:
             - opencue-db:/var/lib/postgresql/data
     opencue:
