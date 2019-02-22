@@ -18,8 +18,11 @@ services:
             - "8080:80"
             - "8443:8443"
         links:
-            - db:database
+            - db:db
         environment:
-            DB_HOST: database
+            DB_HOST: db
+            DB_NAME=cuebot_local
+            DB_USER=cuebot
+            DB_PASS=postgres
 volumes:
     opencue-db:
