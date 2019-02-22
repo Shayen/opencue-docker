@@ -5,6 +5,8 @@ services:
         image: sirasit1234/opencue-db:init
         env_file:
             - 'opencue.env'
+        volumes:
+            - opencue-db:/var/lib/postgresql/data
     opencue:
         image: opencue/cuebot
         command: [
@@ -19,3 +21,5 @@ services:
             - db:database
         environment:
             DB_HOST: database
+volumes:
+    opencue-db:
