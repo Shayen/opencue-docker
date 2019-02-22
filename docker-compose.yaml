@@ -21,8 +21,8 @@ services:
             - db:db
         environment:
             DB_HOST: db
-            DB_NAME=cuebot_local
-            DB_USER=cuebot
-            DB_PASS=postgres
+            DB_NAME: cuebot_local
+            DB_USER: cuebot
+            DB_PASS: postgres
 volumes:
     opencue-db:
